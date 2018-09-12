@@ -1,4 +1,5 @@
 image: docker:latest
+
 services:
   - docker:dind
 
@@ -8,8 +9,8 @@ stages:
   - release
 
 variables:
-  CONTAINER_TEST_IMAGE: registry.gitlab.com/kll/alpine-base:$CI_BUILD_REF_NAME
-  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/kll/alpine-base:latest
+  CONTAINER_TEST_IMAGE: registry.gitlab.com/kll/docker-alpine-base/alpine-base:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/kll/docker-alpine-base/alpine-base:latest
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
