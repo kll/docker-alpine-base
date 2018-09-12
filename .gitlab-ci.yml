@@ -8,8 +8,8 @@ stages:
   - release
 
 variables:
-  CONTAINER_TEST_IMAGE: registry.gitlab.com/kll/docker-alpine-base:$CI_BUILD_REF_NAME
-  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/kll/docker-alpine-base:latest
+  CONTAINER_TEST_IMAGE: registry.gitlab.com/kll/alpine-base:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/kll/alpine-base:latest
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
@@ -23,7 +23,7 @@ build:
 test:
   stage: test
   script:
-    - docker run --rm -e LOCAL_USER_ID=`id -u $USER` $CONTAINER_TEST_IMAGE id
+    - docker run --rm $CONTAINER_TEST_IMAGE id
 
 release-image:
   stage: release
