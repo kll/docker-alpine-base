@@ -1,5 +1,7 @@
 # Alpine Linux base image
 
+[![pipeline status](https://gitlab.com/kll/docker-alpine-base/badges/master/pipeline.svg)](https://gitlab.com/kll/docker-alpine-base/commits/master)
+
 This repository contains an Alpine Linux image that is setup to run as a
 non-root user.
 
