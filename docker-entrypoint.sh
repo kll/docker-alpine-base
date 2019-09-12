@@ -9,4 +9,4 @@ USER_ID=${LOCAL_USER_ID:-9001}
 adduser -D -u $USER_ID user
 export HOME=/home/user
 
-exec su-exec user $@
+exec su-exec user ${@}
